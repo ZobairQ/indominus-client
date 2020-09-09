@@ -1,0 +1,16 @@
+import React, { Component } from "react";
+import UserPage from './UserPage';
+
+class HomePage extends Component {
+  render() {
+    
+    return (
+      <div>
+        <h1>Hello from Home Page</h1>
+        <UserPage/>
+      </div>
+    );
+  }
+}
+
+export default HomePage;
