@@ -4,7 +4,7 @@ import { gql, useQuery } from "@apollo/client";
 const UserPage = () => {
   const query = gql`
     query {
-      user(username: "Madleb") {
+      user(username: "olep") {
         name
         city {
           name
@@ -25,10 +25,10 @@ console.log(data.user);
   return (
     <div>
       <h1>User data</h1>
-      <p>The users name is : {data.user.name}</p>
+      <p>The users name is <b>{data.user.name}</b></p>
       <p>
-        The name of city that belongs to {data.user.name} is{" "}
-        {data.user.city[0].name} and the has {data.user.city[0].gold} gold
+        The name of city that belongs to <b>{data.user.name}</b> is{" "}
+        <b>{data.user.city[0].name}</b> and the has <b>{data.user.city[0].gold}</b> gold
       </p>
     </div>
   );
