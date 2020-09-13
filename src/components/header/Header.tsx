@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { AppBar, Toolbar, IconButton, Typography } from "@material-ui/core";
 import { Link } from "react-router-dom";
 import './header.styles.scss';
+
 export class Header extends Component {
   render() {
     return (
@@ -20,6 +21,9 @@ export class Header extends Component {
           </Typography>
           <Typography variant="h5">
             <Link to="/attack"><div className="headerName">Attack</div></Link>
+          </Typography>
+          <Typography variant="h5">
+            <Link to="/login"><div className="headerName">Login</div></Link>
           </Typography>
         </Toolbar>
       </AppBar>
