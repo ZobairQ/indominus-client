@@ -1,11 +1,25 @@
-import React, { Component } from 'react'
+import React, { Component } from "react";
+import City from "../../components/city/City";
+import { connect } from "react-redux";
+import { getCurrentUser } from "../../store/user/users";
+import { createStructuredSelector } from "reselect";
 
-export default class CityPage extends Component {
-    render() {
-        return (
-            <div>
-                <h1>Hello from CityPage</h1>
-            </div>
-        )
-    }
+interface CityPageProps {
+  currentUser: any;
 }
+export class CityPage extends Component<CityPageProps> {
+  render() {
+    return (
+      <div>
+        <City currentUser={this.props.currentUser} />
+      </div>
+    );
+  }
+}
+
+const mapStateToProps = createStructuredSelector({
+  currentUser: getCurrentUser,
+});
+const mapDispatchToProps = {};
+
+export default connect(mapStateToProps, mapDispatchToProps)(CityPage);
