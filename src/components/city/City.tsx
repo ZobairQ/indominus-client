@@ -1,5 +1,6 @@
 import React from "react";
 import { gql, useQuery } from "@apollo/client";
+import { Button, Box } from "@material-ui/core";
 
 interface CityProps {
   currentUser: any;
@@ -30,11 +31,17 @@ const City = (props: CityProps) => {
   if (!data) return <p>Not found</p>;
   return (
     <div>
-      <div>{data.cityById.name}</div>
-      <div>{data.cityById.gold}</div>
-      <div>{data.cityById.militaryPower}</div>
-      <div>{data.cityById.goldMineLevel}</div>
-      <div>{data.cityById.houseLevel}</div>
+      <div>City Name: {data.cityById.name}</div>
+      <div>City Gold: {data.cityById.gold}</div>
+      <div>City Power: {data.cityById.militaryPower}</div>
+      <div>Gold Mine : {data.cityById.goldMineLevel}</div>
+      <div>House: {data.cityById.houseLevel}</div>
+      <div>Military Base: {data.cityById.militaryBaseLevel}</div>
+      <Box component="span" m={1}>
+      <Button variant="contained" color="primary">
+        Primary
+      </Button>
+      </Box>
     </div>
   );
 };
