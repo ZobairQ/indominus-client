@@ -1,7 +1,6 @@
 import React from "react";
 import { gql, useQuery } from "@apollo/client";
-import { Button, Box } from "@material-ui/core";
-
+import "./city.styles.scss";
 interface CityProps {
   currentUser: any;
 }
@@ -30,18 +29,33 @@ const City = (props: CityProps) => {
   }
   if (!data) return <p>Not found</p>;
   return (
-    <div>
-      <div>City Name: {data.cityById.name}</div>
-      <div>City Gold: {data.cityById.gold}</div>
-      <div>City Power: {data.cityById.militaryPower}</div>
-      <div>Gold Mine : {data.cityById.goldMineLevel}</div>
-      <div>House: {data.cityById.houseLevel}</div>
-      <div>Military Base: {data.cityById.militaryBaseLevel}</div>
-      <Box component="span" m={1}>
-      <Button variant="contained" color="primary">
-        Primary
-      </Button>
-      </Box>
+    <div className="main">
+      <div className="city-con">
+        <h1>{data.cityById.name}</h1>
+        <div className="city-gold">City Gold: {data.cityById.gold}</div>
+        <div className="city-power">
+          City Power: {data.cityById.militaryPower}
+        </div>
+      </div>
+      <div className="container">
+        <div className="gold-mine-level-con">
+          <h2>Gold Mine</h2>
+          <p>Level {data.cityById.goldMineLevel}</p>
+          <button>Upgrade</button>
+        </div>
+
+        <div className="house-level-con">
+          <h2>House</h2>
+          <p>Level {data.cityById.houseLevel}</p>
+          <button>Upgrade</button>
+        </div>
+
+        <div className="military-base-level-con">
+          <h2>Military Base</h2>
+          <p>Level {data.cityById.militaryBaseLevel}</p>
+          <button>Upgrade</button>
+        </div>
+      </div>
     </div>
   );
 };

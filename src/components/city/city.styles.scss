@@ -1,0 +1,36 @@
+.main {
+    display: block;
+    width: 800px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    border-radius: 5px;
+    margin-top: 5%;
+    margin-left: 5%;
+}
+.container {
+  display: flex;
+  justify-content: space-between;
+}
+.city-con {
+  display: flex;
+  flex-flow: column;
+  padding:1em;
+}
+.city-con h1 {
+    align-self: center;
+    
+}
+.gold-mine-level-con {
+  padding:1em;
+}
+
+.house-level-con {
+
+  padding:1em;
+
+}
+
+.military-base-level-con {
+  padding:1em;
+
+}
