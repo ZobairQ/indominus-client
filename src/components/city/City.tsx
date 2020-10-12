@@ -29,31 +29,33 @@ const City = (props: CityProps) => {
   }
   if (!data) return <p>Not found</p>;
   return (
-    <div className="main">
-      <div className="city-con">
-        <h1>{data.cityById.name}</h1>
-        <div className="city-gold">City Gold: {data.cityById.gold}</div>
-        <div className="city-power">
-          City Power: {data.cityById.militaryPower}
+    <div className="row">
+      <div className="main">
+        <div className="city-con">
+          <h1>{data.cityById.name}</h1>
+          <div className="city-gold">City Gold: {data.cityById.gold}</div>
+          <div className="city-power">
+            City Power: {data.cityById.militaryPower}
+          </div>
         </div>
-      </div>
-      <div className="container">
-        <div className="gold-mine-level-con">
-          <h2>Gold Mine</h2>
-          <p>Level {data.cityById.goldMineLevel}</p>
-          <button>Upgrade</button>
-        </div>
+        <div className="container">
+          <div className="gold-mine-level-con">
+            <h2>Gold Mine</h2>
+            <p>Level {data.cityById.goldMineLevel}</p>
+            <a href="#" className='btn btn-full'>Upgrade</a>
+          </div>
 
-        <div className="house-level-con">
-          <h2>House</h2>
-          <p>Level {data.cityById.houseLevel}</p>
-          <button>Upgrade</button>
-        </div>
+          <div className="house-level-con">
+            <h2>House</h2>
+            <p>Level {data.cityById.houseLevel}</p>
+            <a href="#" className='btn btn-full'>Upgrade</a>
+          </div>
 
-        <div className="military-base-level-con">
-          <h2>Military Base</h2>
-          <p>Level {data.cityById.militaryBaseLevel}</p>
-          <button>Upgrade</button>
+          <div className="military-base-level-con">
+            <h2>Military Base</h2>
+            <p>Level {data.cityById.militaryBaseLevel}</p>
+            <a href="#" className='btn btn-full'>Upgrade</a>
+          </div>
         </div>
       </div>
     </div>
