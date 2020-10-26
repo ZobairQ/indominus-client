@@ -1,0 +1,62 @@
+.city {
+    padding: 3rem;
+    background-color: $color-grey-light-1;
+    &__name {
+        font-size: 3.5rem;
+    }
+    &__stats{
+        font-size: 2rem;
+        text-transform: uppercase;
+        margin-bottom: 2rem;
+        padding: 2rem;
+        text-align: center;
+        font-weight: 700;
+        &--power{
+          font-size: 2rem;
+          color:$color-secondary-dark;
+          padding: .4rem;
+        }
+        &--gold{
+          font-size: 2rem;
+          color:$color-primary-dark;
+          padding: .4rem;
+        }
+    }
+    &__card {
+      background-color: $color-white;
+      font-size: 1.5rem;
+      padding: 3rem;
+      border-radius: 0.3rem;
+      -webkit-border-radius: 0.3rem;
+      -moz-border-radius: 0.3rem;
+      -ms-border-radius: 0.3rem;
+      -o-border-radius: 0.3rem;
+      box-shadow: 0 2rem 4rem rgba($color-black, 0.1);
+      width: 100%;
+      text-align: center;
+    }
+  
+    &__building {
+        font-size: 3rem;
+        background-image: linear-gradient(      to right,      $color-tertiary-light,      $color-tertiary-dark    );
+        color: transparent;
+        display: inline-block;
+        -webkit-background-clip: text;
+        background-clip: text;
+        text-transform: uppercase;
+        margin-bottom: 1rem;
+      &--level {
+          color:$color-white;
+          background-image: linear-gradient(      to right,      $color-secondary-light,      $color-secondary-dark    );
+          width: 50%;
+          transform: translateX(50%);
+          -webkit-transform: translateX(50%);
+          -moz-transform: translateX(50%);
+          -ms-transform: translateX(50%);
+          -o-transform: translateX(50%);
+          text-transform: uppercase;
+          margin-bottom: 1rem;
+  }
+    }
+  }
+  

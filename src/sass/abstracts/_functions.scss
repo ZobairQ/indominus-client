@@ -1,0 +1,3 @@
+@function calculateColumnWidth($gutterCount, $size){
+    @return calc((100% - #{$gutterCount} * #{$gutter-horizontal}) / #{$size});
+}
