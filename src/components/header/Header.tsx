@@ -1,23 +1,22 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import "./header.styles.scss";
 
 export class Header extends Component {
   render() {
     return (
-      <div>
-        <ul className="navigation">
-          <li>
-            <Link to="/home">Home</Link>
+      <div className="navigation">
+        <ul className="navigation__list">
+          <li className="navigation__item">
+            <Link to="/home" className="navigation__link">Home</Link>
           </li>
-          <li>
-            <Link to="/city">City</Link>
+          <li className="navigation__item">
+            <Link to="/city" className="navigation__link">City</Link>
           </li>
-          <li>
-            <Link to="/attack">Attack</Link>
+          <li className="navigation__item">
+            <Link to="/attack" className="navigation__link">Attack</Link>
           </li>
-          <li>
-            <Link to="/login">Login</Link>
+          <li className="navigation__item">
+            <Link to="/login" className="navigation__link">Login</Link>
           </li>
         </ul>
       </div>

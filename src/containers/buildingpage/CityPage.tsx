@@ -11,6 +11,11 @@ export class CityPage extends Component<CityPageProps> {
   render() {
     return (
       <div>
+        <div className="row">
+          <div className="u-center-text">
+            <h1 className="heading-primary">The Cities</h1>
+          </div>
+        </div>
         <City currentUser={this.props.currentUser} />
       </div>
     );

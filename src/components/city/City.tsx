@@ -1,5 +1,6 @@
 import React from "react";
 import { gql, useQuery } from "@apollo/client";
+
 interface CityProps {
   currentUser: any;
 }
@@ -28,32 +29,55 @@ const City = (props: CityProps) => {
   }
   if (!data) return <p>Not found</p>;
   return (
-    <div className="row">
-      <div className="main">
-        <div className="city-con">
-          <h1>{data.cityById.name}</h1>
-          <div className="city-gold">City Gold: {data.cityById.gold}</div>
-          <div className="city-power">
-            City Power: {data.cityById.militaryPower}
-          </div>
-        </div>
-        <div className="container">
-          <div className="gold-mine-level-con">
-            <h2>Gold Mine</h2>
-            <p>Level {data.cityById.goldMineLevel}</p>
-            <a href="#" className='btn btn-full'>Upgrade</a>
+    <div className="city">
+      <div className="row">
+        <div className="u-center-text">
+          <h2 className="city__name u-margin-bottom-small">
+            {data.cityById.name}
+          </h2>
+          <p className="city__stats">
+            Gold:{" "}
+            <span className="city__stats--gold">{data.cityById.gold}</span>{" "}
+            &mdash; Military Power:{" "}
+            <span className="city__stats--power">
+              {data.cityById.militaryPower}
+            </span>
+          </p>
+
+          <div className="col-1-of-3">
+            <div className="city__card">
+              <h3 className="city__building">Gold Mine</h3>
+              <p className="city__building--level">
+                level {data.cityById.goldMineLevel}
+              </p>
+              <a href="#" className="btn btn--green u-margin-top-small">
+                Upgrade
+              </a>
+            </div>
           </div>
 
-          <div className="house-level-con">
-            <h2>House</h2>
-            <p>Level {data.cityById.houseLevel}</p>
-            <a href="#" className='btn btn-full'>Upgrade</a>
+          <div className="col-1-of-3">
+            <div className="city__card">
+              <h3 className="city__building">House</h3>
+              <p className="city__building--level">
+                level {data.cityById.houseLevel}
+              </p>
+              <a href="#" className="btn btn--green u-margin-top-small">
+                Upgrade
+              </a>
+            </div>
           </div>
 
-          <div className="military-base-level-con">
-            <h2>Military Base</h2>
-            <p>Level {data.cityById.militaryBaseLevel}</p>
-            <a href="#" className='btn btn-full'>Upgrade</a>
+          <div className="col-1-of-3">
+            <div className="city__card">
+              <h3 className="city__building">Military Base</h3>
+              <p className="city__building--level">
+                level {data.cityById.militaryBaseLevel}
+              </p>
+              <a href="#" className="btn btn--green u-margin-top-small">
+                Upgrade
+              </a>
+            </div>
           </div>
         </div>
       </div>
