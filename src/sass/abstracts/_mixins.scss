@@ -1,0 +1,21 @@
+@mixin clearfix {
+    &::after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+  }
+  
+  @mixin center-horisontal-vertical {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+  }
+  
+  @mixin scale($multipler){
+    -webkit-transform: scale($multipler);
+    -moz-transform: scale($multipler);
+    transform: scale($multipler);
+  }

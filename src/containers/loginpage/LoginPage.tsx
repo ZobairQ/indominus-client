@@ -7,7 +7,6 @@ import {
   Typography,
   Link,
 } from "@material-ui/core";
-import "./loginpage.styles.scss";
 import { createApolloFetch } from "apollo-fetch";
 import { connect } from "react-redux";
 import { logUserIn } from "../../store/user/users";
