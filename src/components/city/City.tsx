@@ -1,6 +1,5 @@
 import React from "react";
 import { gql, useQuery } from "@apollo/client";
-import "./city.styles.scss";
 interface CityProps {
   currentUser: any;
 }

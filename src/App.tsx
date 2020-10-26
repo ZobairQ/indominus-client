@@ -8,6 +8,7 @@ import { connect } from "react-redux";
 import { getCurrentUser } from "./store/user/users";
 import LoginPage from "./containers/loginpage/LoginPage";
 import { createStructuredSelector } from "reselect";
+import "./sass/main.scss";
 interface AppProps {
   currentUser: Function;
 }
