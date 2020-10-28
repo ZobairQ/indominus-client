@@ -1,7 +1,12 @@
 import React from "react";
+import UpgradeGoldMineButton from "./UpgradeGoldMineButton";
+import UpgradeHouseButton from "./UpgradeHouseButton";
 import { gql, useQuery } from "@apollo/client";
-
+import { connect } from "react-redux";
+import { queryCitydata } from "../../store/city/citites";
+import UpgradeMilitaryBaseButton from "./UpgradeMilitaryBaseButton";
 interface CityProps {
+  setCurrentBuildingData: Function;
   currentUser: any;
 }
 
@@ -28,6 +33,8 @@ const City = (props: CityProps) => {
     return <p>ERROR:</p>;
   }
   if (!data) return <p>Not found</p>;
+  const { setCurrentBuildingData } = props;
+  setCurrentBuildingData(data.cityById);
   return (
     <div className="city">
       <div className="row">
@@ -50,9 +57,7 @@ const City = (props: CityProps) => {
               <p className="city__building--level">
                 level {data.cityById.goldMineLevel}
               </p>
-              <a href="#" className="btn btn--green u-margin-top-small">
-                Upgrade
-              </a>
+              <UpgradeGoldMineButton cityID={props.currentUser.city[0].id} />
             </div>
           </div>
 
@@ -62,9 +67,7 @@ const City = (props: CityProps) => {
               <p className="city__building--level">
                 level {data.cityById.houseLevel}
               </p>
-              <a href="#" className="btn btn--green u-margin-top-small">
-                Upgrade
-              </a>
+              <UpgradeHouseButton cityID={props.currentUser.city[0].id} />
             </div>
           </div>
 
@@ -74,9 +77,7 @@ const City = (props: CityProps) => {
               <p className="city__building--level">
                 level {data.cityById.militaryBaseLevel}
               </p>
-              <a href="#" className="btn btn--green u-margin-top-small">
-                Upgrade
-              </a>
+              <UpgradeMilitaryBaseButton cityID={props.currentUser.city[0].id} />
             </div>
           </div>
         </div>
@@ -85,4 +86,12 @@ const City = (props: CityProps) => {
   );
 };
 
-export default City;
+const mapStateToProps = () => ({});
+
+const mapDispatchToProps = (
+  dispatch: (arg0: { payload: any; type: string }) => any
+) => ({
+  setCurrentBuildingData: (city: any) => dispatch(queryCitydata(city)),
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(City);

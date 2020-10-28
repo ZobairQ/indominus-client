@@ -1,24 +1,23 @@
 import React from "react";
 import { gql, useMutation } from "@apollo/client";
 import { connect } from "react-redux";
-import { upgradeGoldMine } from "../../store/city/citites";
-
+import { upgradeHouse } from "../../store/city/citites";
 interface ButtonProps {
   cityID: String;
-  updateGoldMine: Function;
+  updateHouseLevel: Function;
 }
 
-const UpgradeGoldMineButton = (props: ButtonProps) => {
+const UpgradeHouseButton = (props: ButtonProps) => {
   const UPGRADE_BUILDING = gql`
   mutation {
-    incrementGoldMineLevel(id: "${props.cityID}") {
-      goldMineLevel
-    }
+    incrementHouseLevel(id: "${props.cityID}") {
+        houseLevel
+      }
   }
 `;
 
   const [incrementBuildingLevel, { data }] = useMutation(UPGRADE_BUILDING);
-  const { updateGoldMine } = props;
+  const { updateHouseLevel } = props;
   return (
     <div>
       <a
@@ -26,12 +25,12 @@ const UpgradeGoldMineButton = (props: ButtonProps) => {
         onClick={(e) => {
           e.preventDefault();
           incrementBuildingLevel().then((res) => {
-            updateGoldMine(res.data.incrementGoldMineLevel);
+            updateHouseLevel(res.data.incrementHouseLevel);
           });
         }}
         className="btn btn--green u-margin-top-small"
       >
-        Upgrade {data ? data.incrementGoldMineLevel.goldMineLevel : ""}
+        Upgrade
       </a>
     </div>
   );
@@ -42,9 +41,6 @@ const mapStateToProps = () => ({});
 const mapDispatchToProps = (
   dispatch: (arg0: { payload: any; type: string }) => any
 ) => ({
-  updateGoldMine: (city: any) => dispatch(upgradeGoldMine(city)),
+  updateHouseLevel: (city: any) => dispatch(upgradeHouse(city)),
 });
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(UpgradeGoldMineButton);
+export default connect(mapStateToProps, mapDispatchToProps)(UpgradeHouseButton);
