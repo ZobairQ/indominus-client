@@ -31,7 +31,7 @@ const UpgradeGoldMineButton = (props: ButtonProps) => {
         }}
         className="btn btn--green u-margin-top-small"
       >
-        Upgrade {data ? data.incrementGoldMineLevel.goldMineLevel : ""}
+        Upgrade
       </a>
     </div>
   );
