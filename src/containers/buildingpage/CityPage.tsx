@@ -16,7 +16,13 @@ export class CityPage extends Component<CityPageProps> {
             <h1 className="heading-primary">The Cities</h1>
           </div>
         </div>
-        <City currentUser={this.props.currentUser} />
+
+        {
+        this.props.currentUser.city.map((c: { id: any }) => (
+        <City key={1} cityId={c.id}></City>
+        ))
+        }
+
       </div>
     );
   }

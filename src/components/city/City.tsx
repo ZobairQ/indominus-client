@@ -16,7 +16,7 @@ import { createStructuredSelector } from "reselect";
 
 interface CityProps {
   setCurrentBuildingData: Function;
-  currentUser: any;
+  cityId: any;
   gold: any;
   goldMineLevel: any;
   houseLevel: any;
@@ -27,10 +27,10 @@ interface CityProps {
 const City = (props: CityProps) => {
   const { setCurrentBuildingData } = props;
 
-  const { currentUser } = props;
+  const { cityId } = props;
   const query = gql`
       query {
-        cityById(id: "${props.currentUser.city[0].id}") {
+        cityById(id: "${cityId}") {
           id
           name
           gold
@@ -66,7 +66,7 @@ const City = (props: CityProps) => {
             {data.cityById.name}
           </h2>
           <p className="city__stats">
-            Gold: <span className="city__stats--gold">{props.gold}</span>{" "}
+            Gold: <span className="city__stats--gold">{data.cityById.gold}</span>{" "}
             &mdash; Military Power:{" "}
             <span className="city__stats--power">{props.militaryPower}</span>
           </p>
@@ -77,7 +77,7 @@ const City = (props: CityProps) => {
               <p className="city__building--level">
                 level {props.goldMineLevel}
               </p>
-              <UpgradeGoldMineButton cityID={props.currentUser.city[0].id} />
+              <UpgradeGoldMineButton cityID={cityId} />
             </div>
           </div>
 
@@ -85,7 +85,7 @@ const City = (props: CityProps) => {
             <div className="city__card">
               <h3 className="city__building">House</h3>
               <p className="city__building--level">level {props.houseLevel}</p>
-              <UpgradeHouseButton cityID={props.currentUser.city[0].id} />
+              <UpgradeHouseButton cityID={cityId} />
             </div>
           </div>
 
@@ -96,7 +96,7 @@ const City = (props: CityProps) => {
                 level {props.militaryBaseLevel}
               </p>
               <UpgradeMilitaryBaseButton
-                cityID={props.currentUser.city[0].id}
+                cityID={cityId}
               />
             </div>
           </div>
