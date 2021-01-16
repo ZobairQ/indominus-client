@@ -1,7 +1,7 @@
 [![time tracker](https://wakatime.com/badge/github/ZobairQ/indominus-client.svg)](https://wakatime.com/badge/github/ZobairQ/indominus-client)
 # Indominus
 
-Indominus is strategy browser game written in React/Redux/GraphQL.
+Indominus is strategy browser game written in React/Redux/GraphQL. The client a project for itself.
 
 ## Technology
 
